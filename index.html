@@ -1,0 +1,66 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link href="main.css"  rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="index.js"></script>
+  </head>
+  <body>
+    
+        
+   <div class="container">
+    <form  ng-submit="handleClick()"  ng-controller="formController">
+        <label>Name</label>
+        <input id="name" type="text" placeholder="enter your name" ng-model="inputName"/>
+        <p>{{info.name}}</p>
+        <label>Email</label>
+        <input id="email" type="email" placeholder="enter your mail id" ng-model="inputEmail"/>
+
+        
+        <input id="age" type="number" placeholder="enter your Age" ng-model="inputAge"/>
+        <button >Submit</button>
+
+        <table >
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Age</th>
+              
+            </tr>
+            <tr>
+              <td>{{submitName}}</td>
+              <td>{{submitEmail}}</td>
+              <td>{{submitAge}}</td>
+            </tr>
+            
+          </table>
+        
+        
+    </form>
+    <div ng-controller="getDataController">
+        <button ng-click="getData()" > Get  Previous Data</button>
+
+        <h3>Previous Data</h3>
+
+        
+        <table >
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Age</th>
+              
+            </tr>
+            <tr>
+              <td>{{prevData.name}}</td>
+              <td>{{prevData.email}}</td>
+              <td>{{prevData.age}}</td>
+            </tr>
+            
+          </table>
+        
+    </div>
+</div>
+    
+  </body>
+</html>
